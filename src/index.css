@@ -1,13 +1,322 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+html {
+    height: 100%;
+}
+
+.video-background {
+    position: fixed;
+    /* Keeps the video fixed while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    /* Apply blur effect */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    /* Adds some space above content */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background: #1a1a1a;
+    border: 4px solid #333;
+    border-radius: 0;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 8px 8px 0 #333;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    margin: 0 auto 1rem;
+    image-rendering: pixelated;
+}
+
+.coming-soon {
+    color: #0f0;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px #000;
+    animation: blink 1s step-end infinite;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.talent-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.talent-card {
+    background: #1a1a1a;
+    border: 4px solid #333;
+    border-radius: 0;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 8px 8px 0 #333;
+    transition: transform 0.2s step-end;
+}
+
+.talent-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 #333;
+}
+
+.talent-avatar {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #333;
+    margin-bottom: 1rem;
+    image-rendering: pixelated;
+}
+
+.talent-name {
+    color: #0f0;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px #000;
+}
+
+.talent-role {
+    color: #888;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.talent-teaser {
+    color: #ccc;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.click-me {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background: #333;
+    border: 2px solid #0f0;
+    transition: all 0.2s step-end;
+}
+
+.click-me:hover {
+    background: #0f0;
+    color: #000;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .talent-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    .talent-container {
+        grid-template-columns: 1fr;
+    }
+    .coming-soon {
+        font-size: 1.5rem;
+    }
+    .talent-card {
+        padding: 1rem;
+    }
+}
+/* Update the background video styling */
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.3);
+    opacity: 0.6;
+}
+/* New styling for the intro video */
+
+.vid1 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    height: 180px;
+    z-index: 10;
+    overflow: hidden;
+    border: 4px solid #333;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+    background: #000;
+    transition: all 0.3s step-end;
+}
+
+#vid1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9);
+}
+/* Add hover effect for the video container */
+
+.vid1:hover {
+    transform: scale(1.05);
+    border-color: #0f0;
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.6);
+}
+/* Add responsive design for the video */
+
+@media (max-width: 768px) {
+    .vid1 {
+        width: 240px;
+        height: 135px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+/* Add video controls wrapper */
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.vid1:hover .video-controls {
+    opacity: 1;
+}
+/* Style for the second video container */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    border: 4px solid #333;
+    box-shadow: 8px 8px 0 #333;
+    background: #000;
+    overflow: hidden;
+    transition: all 0.3s step-end;
+}
+
+#vid2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9);
+}
+
+.video-container:hover {
+    border-color: #0f0;
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 #333;
+}
+/* Responsive adjustments */
+
+@media (max-width: 1024px) {
+    .video-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 95%;
+    }
 }
